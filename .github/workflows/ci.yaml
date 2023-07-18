@@ -15,6 +15,6 @@ jobs:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
         with:
-          go: {{ matrix.go }}
+          go: ${{ matrix.go }}
       - run: go test -v ./...
       - run: go run math.go
