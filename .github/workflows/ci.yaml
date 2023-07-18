@@ -8,13 +8,13 @@ jobs:
     runs-on: ubuntu-latest
     strategy:
       matrix:
-        go: [1.14, 1.15]
+        go-version: [1.14, 1.15]
 
-    name: Golang ${{ matrix.go }} test
+    name: Golang ${{ matrix.go-version }} test
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-go@v2
         with:
-          go: ${{ matrix.go }}
+          go-version: ${{ matrix.go-version }}
       - run: go test -v ./...
       - run: go run math.go
